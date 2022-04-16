@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "img": "https://i.ibb.co/Jv503Dh/architecture-building-city-2047397.png",
+        "name": "Ramona Mcdaniel",
+        "description": "Ad ipsum ex ut pariatur.",
+        "price": 51
+    },
+    {
+        "id": "2",
+        "img": "https://i.ibb.co/Jv503Dh/architecture-building-city-2047397.png",
+        "name": "Bertha Merritt",
+        "description": "Cillum deserunt elit fugiat excepteur.",
+        "price": 53
+    },
+    {
+        "id": "3",
+        "img": "https://i.ibb.co/Jv503Dh/architecture-building-city-2047397.png",
+        "name": "Benita Rojas",
+        "description": "Occaecat mollit tempor minim aute id minim officia qui sint aliqua cillum eu.",
+        "price": 38
+    }
+]
