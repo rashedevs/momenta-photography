@@ -3,6 +3,7 @@
     font-size: 18px;
     font-weight: 500;
     color: #FFFF !important;
+    text-decoration: none;
 }
 
 .all-links a:hover {
