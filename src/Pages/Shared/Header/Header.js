@@ -3,6 +3,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import camera from '../../../images/logo/camera.jpg';
 import './Header.css';
 
 const Header = () => {
@@ -10,7 +11,8 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect sticky='top' expand="lg" bg="dark" variant="dark" className='header py-3'>
             <Container>
-                <Navbar.Brand as={Link} to="/" style={{ mouse: "pointer", fontSize: "22px" }}>Momenta Photography</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/" style={{ mouse: "pointer", fontSize: "22px" }}>
+                    <span><img style={{ width: "32px" }} src={camera} alt="" /></span> Momenta Photography</Navbar.Brand>
                 {/* <Navbar.Brand as={Link} to="/">
                 <img height={35} src={logo} alt="" />
             </Navbar.Brand> */}
