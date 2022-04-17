@@ -4,6 +4,8 @@ import GoogleLogin from '../GoogleLogin/GoogleLogin';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     const navigate = useNavigate()
@@ -30,14 +32,14 @@ const Register = () => {
         const confirmPassword = event.target.confirmPassword.value
 
         if (password !== confirmPassword) {
-            alert('Password did not match')
+            toast('Password did not match')
             return;
         }
         await createUserWithEmailAndPassword(email, password)
         navigate('/home')
     }
     return (
-        <div className='container'>
+        <div className='container register-box'>
             <div className='register-form'>
                 <h2 className='text-dark my-5 text-center'>Please Register</h2>
                 <form onSubmit={handleRegister}>
@@ -48,11 +50,12 @@ const Register = () => {
 
                     <input type="password" name="confirmPassword" id="33" placeholder='Confirm Password' required />
 
-                    <input className='btn btn-primary w-50 mx-auto mt-2' type="submit" value="Register" />
+                    <input className='baton w-50 mx-auto mt-2 fw-bold text-white' type="submit" value="Register" />
                 </form>
                 {errorBox}
                 <p>Already have an account? <Link to='/login' className='text-primary pe-auto text-decoration-none'> Please Login</Link></p>
                 <GoogleLogin></GoogleLogin>
+                <ToastContainer />
             </div>
         </div>
     );

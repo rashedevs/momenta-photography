@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -7,9 +7,9 @@ import GoogleLogin from '../GoogleLogin/GoogleLogin';
 import Loading from '../Shared/Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './Login.css'
 
 const Login = () => {
-    // const [auth] = useAuthState()
     const navigate = useNavigate()
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
@@ -25,11 +25,13 @@ const Login = () => {
     const emailRef = useRef('')
     const passwordRef = useRef('')
 
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true })
+        }
+    }, [user])
 
 
-    if (user) {
-        navigate(from, { replace: true })
-    }
     const resetPassword = async () => {
         const email = emailRef.current.value
         if (email) {
@@ -37,12 +39,12 @@ const Login = () => {
             toast('Email sent successfully')
         }
         else {
-            toast('Enter your email')
+            toast('Please enter your email')
         }
     }
-    // if (loading || sending) {
-    //     return <Loading></Loading>
-    // }
+    if (loading || sending) {
+        return <Loading></Loading>
+    }
     let errorBox;
     if (error || error1) {
         errorBox = <p className='text-danger'>Error: {error?.message}</p>
@@ -56,7 +58,7 @@ const Login = () => {
     }
 
     return (
-        <div className='container w-50 mx-auto'>
+        <div className='container w-50 mx-auto login-box'>
             <h2 className='text-dark my-5 text-center'>Please Login</h2>
             <Form onSubmit={handleLoginSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -68,7 +70,7 @@ const Login = () => {
 
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
-                <Button variant="primary" type="submit" className='d-block mx-auto w-50 my-2'>
+                <Button variant="primary" type="submit" className='d-block mx-auto w-50 my-2 fw-bold'>
                     Login
                 </Button>
             </Form>

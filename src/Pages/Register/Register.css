@@ -1,3 +1,11 @@
+.register-box {
+    min-height: 100vh;
+}
+
+.baton {
+    background-color: crimson;
+}
+
 .register-form {
     margin: 0 auto;
     width: 50%;
