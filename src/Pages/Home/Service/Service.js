@@ -6,12 +6,12 @@ const Service = ({ service }) => {
     const navigate = useNavigate()
     const { name, img, description, price } = service
     return (
-        <div className='service'>
-            <img style={{ width: "100%" }} src={img} alt="" />
-            <h4>{name}</h4>
-            <h4>${price}</h4>
-            <p>{description}</p>
-            <button onClick={() => navigate("/checkout")}>Book Now</button>
+        <div className='service h-100'>
+            <img style={{ width: "100%", height: "250px" }} src={img} alt="" />
+            <h4 className='my-3'>{name}</h4>
+            <h4 className='my-2'>${price}</h4>
+            <p className='my-3 mx-3'><small>{description}</small></p>
+            <button onClick={() => navigate("/checkout")} className="my-4 btn-danger fw-bold px-3 rounded py-1">Book Now</button>
         </div>
     );
 };

@@ -4,7 +4,7 @@ import './Works.css';
 const Works = () => {
     return (
         <div className='my-5'>
-            <h2 className='text-dark mb-5'>Check out some of my <br />amazing clicks</h2>
+            <h3 className='text-danger fw-bold mb-5'>Check out some of my <br />amazing clicks</h3>
             <div className='my-2 container photo-gallery'>
                 <img src="https://www.shubhbaraat.com/blog-image/img/47/blog-image-0047.jpg" alt="" />
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNTSunU7bkWT5fkZgW-osTHqAFRRMfIabJqQ&usqp=CAU" alt="" />

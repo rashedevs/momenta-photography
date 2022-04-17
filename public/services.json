@@ -1,23 +1,23 @@
 [
     {
         "id": "1",
-        "img": "https://i.ibb.co/Jv503Dh/architecture-building-city-2047397.png",
+        "img": "https://cdn.lifehack.org/wp-content/uploads/2015/03/tips-to-become-a-better-photographer.jpeg",
         "name": "Photography",
-        "description": "Ad ipsum ex ut pariatur.",
+        "description": "6 hour duration, 100 personal photograph, 1 edited video & 1 digital album",
         "price": 199
     },
     {
         "id": "2",
-        "img": "https://i.ibb.co/Jv503Dh/architecture-building-city-2047397.png",
+        "img": "https://hockleyphoto.com/wp-content/uploads/2013/01/portland-corporate-event-photography-IMG_2600-20091209-1-950x633.jpg",
         "name": "Events",
-        "description": "Cillum deserunt elit fugiat excepteur.",
+        "description": "12 hour duration, 500 plus photograph, 3 edited video & 1 digital album",
         "price": 599
     },
     {
         "id": "3",
-        "img": "https://i.ibb.co/Jv503Dh/architecture-building-city-2047397.png",
+        "img": "https://www.bumblescoop.com/wp-content/uploads/2021/05/Wedding-Videography-Singapore.png",
         "name": "Videography",
-        "description": "Occaecat mollit tempor minim aute id minim officia qui sint aliqua cillum eu.",
+        "description": "Unlimited duration, 10 edited video, 20 printed copy with 1 digital album",
         "price": 999
     }
 ]
