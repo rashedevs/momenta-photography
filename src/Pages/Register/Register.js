@@ -6,6 +6,7 @@ import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from 'react';
 
 const Register = () => {
     const navigate = useNavigate()
@@ -14,10 +15,12 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
-    if (user) {
-        navigate('/home')
-    }
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true })
+    useEffect(() => {
+        if (user) {
+            navigate('/home')
+        }
+    })
     if (loading) {
         return <Loading></Loading>
     }

@@ -13,7 +13,7 @@ const GoogleLogin = () => {
         if (user) {
             navigate('/home')
         }
-    }, [user])
+    })
     let errorBox;
     if (loading) {
         return <Loading></Loading>

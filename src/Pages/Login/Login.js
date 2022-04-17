@@ -29,7 +29,7 @@ const Login = () => {
         if (user) {
             navigate(from, { replace: true })
         }
-    }, [user])
+    })
 
 
     const resetPassword = async () => {

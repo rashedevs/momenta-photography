@@ -7,7 +7,7 @@ const Service = ({ service }) => {
     const { name, img, description, price } = service
     return (
         <div className='service'>
-            <img style={{ width: "380px" }} src={img} alt="" />
+            <img style={{ width: "100%" }} src={img} alt="" />
             <h4>{name}</h4>
             <h4>${price}</h4>
             <p>{description}</p>
