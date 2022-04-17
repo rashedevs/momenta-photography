@@ -1,15 +1,46 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
 import GoogleLogin from '../GoogleLogin/GoogleLogin';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import Loading from '../Shared/Loading/Loading';
 
 const Register = () => {
+    const navigate = useNavigate()
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+    if (user) {
+        navigate('/home')
+    }
+    if (loading) {
+        return <Loading></Loading>
+    }
+    let errorBox;
+    if (error) {
+        errorBox = <p className='text-danger'>Error: {error?.message}</p>
+    }
+    const handleRegister = async (event) => {
+        event.preventDefault()
+        const email = event.target.email.value
+        const password = event.target.password.value
+        const confirmPassword = event.target.confirmPassword.value
+
+        if (password !== confirmPassword) {
+            alert('Password did not match')
+            return;
+        }
+        await createUserWithEmailAndPassword(email, password)
+        navigate('/home')
+    }
     return (
         <div className='container'>
             <div className='register-form'>
                 <h2 className='text-dark my-5 text-center'>Please Register</h2>
-                <form>
-                    {/* <input type="text" name="" id="" placeholder='Your Name' /> */}
+                <form onSubmit={handleRegister}>
 
                     <input type="email" name="email" id="11" placeholder='Email Address' required />
 
@@ -17,11 +48,9 @@ const Register = () => {
 
                     <input type="password" name="confirmPassword" id="33" placeholder='Confirm Password' required />
 
-                    <input
-                        // disabled={!agree}
-                        className='btn btn-primary w-50 mx-auto mt-2' type="submit" value="Register" />
+                    <input className='btn btn-primary w-50 mx-auto mt-2' type="submit" value="Register" />
                 </form>
-                {/* {errorBox} */}
+                {errorBox}
                 <p>Already have an account? <Link to='/login' className='text-primary pe-auto text-decoration-none'> Please Login</Link></p>
                 <GoogleLogin></GoogleLogin>
             </div>

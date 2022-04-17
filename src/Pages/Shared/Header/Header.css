@@ -8,3 +8,12 @@
 .all-links a:hover {
     color: orangered !important;
 }
+
+.header button {
+    margin: 0 20px;
+    background-color: #FFFF;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0px 15px;
+    color: red !important;
+}
