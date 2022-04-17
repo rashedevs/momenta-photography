@@ -1,12 +1,15 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import GoogleLogin from '../GoogleLogin/GoogleLogin';
 import Loading from '../Shared/Loading/Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+    // const [auth] = useAuthState()
     const navigate = useNavigate()
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
@@ -16,17 +19,32 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(auth);
+
     const emailRef = useRef('')
     const passwordRef = useRef('')
+
+
 
     if (user) {
         navigate(from, { replace: true })
     }
-    if (loading) {
-        return <Loading></Loading>
+    const resetPassword = async () => {
+        const email = emailRef.current.value
+        if (email) {
+            await sendPasswordResetEmail(email)
+            toast('Email sent successfully')
+        }
+        else {
+            toast('Enter your email')
+        }
     }
+    // if (loading || sending) {
+    //     return <Loading></Loading>
+    // }
     let errorBox;
-    if (error) {
+    if (error || error1) {
         errorBox = <p className='text-danger'>Error: {error?.message}</p>
     }
     const handleLoginSubmit = event => {
@@ -36,6 +54,7 @@ const Login = () => {
 
         signInWithEmailAndPassword(email, password)
     }
+
     return (
         <div className='container w-50 mx-auto'>
             <h2 className='text-dark my-5 text-center'>Please Login</h2>
@@ -54,10 +73,11 @@ const Login = () => {
                 </Button>
             </Form>
             {errorBox}
-            <p className='mt-3'>New to Momenta? <Link to='/register' className='text-primary pe-auto text-decoration-none'>Please Register</Link></p>
+            <p className='mt-3'>New to Momenta? <Link to='/register' className='text-primary pe-auto text-decoration-none ms-1'>Please Register</Link></p>
 
-            <p className='mt-3'>Forgot Password? <button className='btn btn-link text-primary pe-auto text-decoration-none'>Reset Password</button></p>
+            <p className='mt-3'>Forgot Password? <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button></p>
             <GoogleLogin></GoogleLogin>
+            <ToastContainer />
         </div>
     );
 };
