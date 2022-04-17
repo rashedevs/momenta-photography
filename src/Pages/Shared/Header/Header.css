@@ -1,0 +1,10 @@
+.header a {
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFFF !important;
+}
+
+.all-links a:hover {
+    color: orangered !important;
+}

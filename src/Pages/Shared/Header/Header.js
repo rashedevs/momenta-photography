@@ -4,9 +4,9 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <Navbar collapseOnSelect sticky='top' expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect sticky='top' expand="lg" bg="dark" variant="dark" className='header'>
             <Container>
-                <Navbar.Brand as={Link} to="/" style={{ mouse: "pointer" }}>Momenta</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/" style={{ mouse: "pointer", fontSize: "22px" }}>Momenta Photography</Navbar.Brand>
                 {/* <Navbar.Brand as={Link} to="/">
                 <img height={35} src={logo} alt="" />
             </Navbar.Brand> */}
@@ -14,7 +14,9 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                     </Nav>
-                    <Nav>
+                    {/* <Nav className='me-auto'>
+                    </Nav> */}
+                    <Nav className='all-links'>
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
                         <Nav.Link as={Link} to="/about">About</Nav.Link>
