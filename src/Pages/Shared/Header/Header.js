@@ -22,10 +22,9 @@ const Header = () => {
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
                         <Nav.Link as={Link} to="/about">About</Nav.Link>
-                        {/* <Nav.Link as={Link} to="/login">Login</Nav.Link> */}
                         {
                             user ?
-                                <button className='btn btn-link text-white text-decoration-none' onClick={() => signOut(auth)}>Sign Out</button>
+                                <button className='logout btn btn-link text-white text-decoration-none' onClick={() => signOut(auth)}>Sign Out</button>
                                 :
                                 <Nav.Link eventKey={2} as={Link} to="/login">
                                     Login
