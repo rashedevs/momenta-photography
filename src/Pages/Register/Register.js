@@ -5,7 +5,7 @@ import GoogleLogin from '../GoogleLogin/GoogleLogin';
 
 const Register = () => {
     return (
-        <div className='container' style={{ height: "120vh" }}>
+        <div className='container'>
             <div className='register-form'>
                 <h2 className='text-dark my-5 text-center'>Please Register</h2>
                 <form>

@@ -5,7 +5,7 @@ import GoogleLogin from '../GoogleLogin/GoogleLogin';
 
 const Login = () => {
     return (
-        <div className='container w-50 mx-auto' style={{ height: "120vh" }}>
+        <div className='container w-50 mx-auto'>
             <h2 className='text-dark my-5 text-center'>Please Login</h2>
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
