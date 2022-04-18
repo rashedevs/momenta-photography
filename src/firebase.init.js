@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDh2Yq5BcgFHm5JC30wkfTzWMmh1GOkNgg",
-    authDomain: "momenta-photography.firebaseapp.com",
-    projectId: "momenta-photography",
-    storageBucket: "momenta-photography.appspot.com",
-    messagingSenderId: "467985685028",
-    appId: "1:467985685028:web:c14549df2d91053621d6b1"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId
 };
 
 // Initialize Firebase
