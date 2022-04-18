@@ -7,7 +7,7 @@ import GoogleLogin from '../GoogleLogin/GoogleLogin';
 import Loading from '../Shared/Loading/Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './Login.css'
+import './Login.css';
 
 const Login = () => {
     const navigate = useNavigate()
