@@ -16,6 +16,8 @@ const Header = () => {
                     <span><img style={{ width: "32px" }} src={camera} alt="" /></span> Momenta Photography</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto">
+                    </Nav>
                     <Nav className='all-links'>
                         <CustomLink to="/">Home</CustomLink>
                         <CustomLink to="/blogs">Blogs</CustomLink>
