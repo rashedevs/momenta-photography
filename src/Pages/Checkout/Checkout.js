@@ -19,7 +19,7 @@ const Checkout = () => {
     return (
         <>
             <h3 className='text-primary mt-5'>Your selected service: {serviceId}</h3>
-            <div className='container' style={{ minHeight: "60vh" }}>
+            <div className='container' style={{ minHeight: "70vh" }}>
                 <Form onSubmit={handleCheckout} className='w-50 mx-auto mt-5'>
                     <Form.Group className="mb-5" controlId="formBasicEmail">
                         <Form.Control name='name' type="text" placeholder="Your name" required />
@@ -36,7 +36,7 @@ const Checkout = () => {
                         <Form.Control name='phone' type="number" placeholder="Phone" required />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit" className='px-5 mb-4'>
+                    <Button variant="primary" type="submit" className='px-5 mb-4 fw-bold'>
                         Checkout
                     </Button>
                 </Form>
