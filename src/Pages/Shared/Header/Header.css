@@ -19,7 +19,7 @@
     color: red !important;
 }
 
-@media screen and (max-width:576px) {
+@media screen and (max-width:767px) {
     .header button {
         display: unset;
         background-color: #262626;

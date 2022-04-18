@@ -9,7 +9,7 @@
     height: 220px;
 }
 
-@media screen and (max-width:576px) {
+@media screen and (max-width:767px) {
     .photo-gallery {
         margin: 0 auto;
         grid-template-columns: repeat(1, 1fr);
